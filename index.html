@@ -23,13 +23,15 @@
     <!-- Sidebar -->
     <nav class="sidebar">
         <div class="sidebar-header">
-            <div class="page-inline-e2ff0fd1a7">
-                <div class="page-inline-7cb78931b2">
-                    <span class="material-symbols-outlined filled page-inline-c8a61d4de0">corporate_fare</span>
-                </div>
-                <div>
-                    <h1 class="page-inline-da7ddcd0ea">Vận Hành ERP</h1>
-                    <p class="page-inline-91ccfc4ebd">Vietnamese SMB Edition</p>
+            <div class="sidebar-header-frame">
+                <div class="sidebar-brand">
+                    <div style="width: 32px; height: 32px; background-color: var(--primary-fixed); border-radius: var(--radius-default); display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined filled" style="color: var(--primary); font-size: 20px;">corporate_fare</span>
+                    </div>
+                    <div class="sidebar-brand-copy">
+                        <h1 style="color: white; font-weight: 900; font-size: 20px; line-height: 1;">Vận Hành ERP</h1>
+                        <p style="color: #94a3b8; font-size: 10px; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Vietnamese SMB Edition</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,15 +71,22 @@
             </a>
         </div>
 
-        <div class="page-inline-711681ecfb">
-            <div class="page-inline-e2ff0fd1a7">
-                <div class="page-inline-436428a485">
+        <div class="sidebar-profile" data-dropdown>
+            <button class="sidebar-profile-summary" data-dropdown-trigger aria-expanded="false">
+                <div class="sidebar-profile-avatar" data-user-initials>
                     NV
                 </div>
-                <div class="page-inline-ee3d55bf99">
-                    <div class="page-inline-4e189ebeb3">Nguyễn Văn A</div>
-                    <div class="page-inline-76ef5af46a">Quản trị viên</div>
+                <div class="sidebar-profile-meta">
+                    <div data-user-name>Nguyễn Văn A</div>
+                    <div data-user-role>Quản trị viên</div>
                 </div>
+                <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div class="sidebar-profile-actions" data-dropdown-menu>
+                <button class="btn-ghost sidebar-logout-btn" data-logout>
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Đăng xuất</span>
+                </button>
             </div>
         </div>
     </nav>

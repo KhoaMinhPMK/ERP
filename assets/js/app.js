@@ -56,6 +56,7 @@ const ERPApp = {
         this.setupAuthActions();
         this.loadUserData();
         this.initializeComponents();
+        this.setupDemoActions();
     },
 
     enforceAuth() {
@@ -125,6 +126,7 @@ const ERPApp = {
         const sidebar = document.querySelector('.sidebar');
         const pageHeader = document.querySelector('.page-header');
         const sidebarHeader = document.querySelector('.sidebar-header');
+        const sidebarNav = document.querySelector('.sidebar-nav');
 
         if (!sidebar) {
             return;
@@ -171,7 +173,7 @@ const ERPApp = {
         }
 
         let collapseBtn = document.querySelector('[data-sidebar-collapse]');
-        if (!collapseBtn && sidebarHeader) {
+        if (!collapseBtn && (sidebarNav || sidebarHeader)) {
             collapseBtn = document.createElement('button');
             collapseBtn.type = 'button';
             collapseBtn.className = 'btn-ghost sidebar-collapse-toggle';
@@ -182,7 +184,11 @@ const ERPApp = {
                 <span class="material-symbols-outlined">left_panel_close</span>
                 <span class="sidebar-collapse-label">Thu gọn</span>
             `;
-            sidebarHeader.appendChild(collapseBtn);
+            if (sidebarNav?.parentNode) {
+                sidebarNav.insertAdjacentElement('afterend', collapseBtn);
+            } else {
+                sidebarHeader?.appendChild(collapseBtn);
+            }
         }
 
         let overlay = document.querySelector('[data-sidebar-overlay]');
@@ -353,22 +359,53 @@ const ERPApp = {
     handleDropdowns() {
         const dropdowns = document.querySelectorAll('[data-dropdown]');
 
-        dropdowns.forEach(dropdown => {
+        const closeAllDropdowns = (exceptMenu = null) => {
+            dropdowns.forEach((dropdown) => {
+                const trigger = dropdown.querySelector('[data-dropdown-trigger]');
+                const menu = dropdown.querySelector('[data-dropdown-menu]');
+                if (!menu || menu === exceptMenu) {
+                    return;
+                }
+
+                menu.classList.remove('active');
+                if (trigger) {
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        };
+
+        dropdowns.forEach((dropdown) => {
             const trigger = dropdown.querySelector('[data-dropdown-trigger]');
             const menu = dropdown.querySelector('[data-dropdown-menu]');
 
             if (trigger && menu) {
+                if (!trigger.hasAttribute('aria-expanded')) {
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+
                 trigger.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    menu.classList.toggle('active');
+                    const willOpen = !menu.classList.contains('active');
+                    closeAllDropdowns();
+                    if (willOpen) {
+                        menu.classList.add('active');
+                        trigger.setAttribute('aria-expanded', 'true');
+                    } else {
+                        trigger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                menu.addEventListener('click', (event) => {
+                    event.stopPropagation();
                 });
             }
         });
 
-        document.addEventListener('click', () => {
-            document.querySelectorAll('[data-dropdown-menu]').forEach(menu => {
-                menu.classList.remove('active');
-            });
+        document.addEventListener('click', () => closeAllDropdowns());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeAllDropdowns();
+            }
         });
     },
 
@@ -406,6 +443,335 @@ const ERPApp = {
         }
     },
 
+    setupDemoActions() {
+        document.addEventListener('click', (event) => {
+            const btn = event.target.closest('button');
+            if (!btn || btn.disabled) {
+                return;
+            }
+
+            const main = btn.closest('.main-content');
+            if (!main) {
+                return;
+            }
+
+            if (
+                btn.matches(
+                    '[data-logout], [data-dropdown-trigger], [data-modal-trigger], [data-modal-close], [data-sidebar-toggle]'
+                )
+            ) {
+                return;
+            }
+            if (btn.getAttribute('onclick')) {
+                return;
+            }
+
+            const title = (btn.getAttribute('title') || '').trim();
+            const icon =
+                btn.querySelector(':scope > .material-symbols-outlined')?.textContent?.trim() ||
+                btn.querySelector('.material-symbols-outlined')?.textContent?.trim() ||
+                '';
+            let label = btn.textContent.replace(/\s+/g, ' ').trim();
+            if (!label && icon) {
+                label = icon;
+            }
+
+            const pager = btn.closest('.page-inline-d2f87c7fad');
+            if (pager) {
+                this.handleDemoPaginationClick(btn, pager);
+                return;
+            }
+
+            const tabRow = btn.closest('.page-inline-078223772a');
+            if (tabRow && btn.classList.contains('page-inline-a59a7be0e3')) {
+                this.handleDemoApprovalTabClick(btn, tabRow);
+                return;
+            }
+
+            const weekSel = btn.closest('.week-selector');
+            if (weekSel) {
+                this.handleDemoWeekSelectorClick(btn, weekSel, icon, label);
+                return;
+            }
+
+            if (title && this.handleDemoTitleAction(btn, title)) {
+                return;
+            }
+
+            if (this.handleDemoLabelAction(btn, label, icon)) {
+                return;
+            }
+
+            this.showNotification(`Đã thực hiện: ${label || title || 'Thao tác'} (chế độ demo)`, 'info');
+        });
+    },
+
+    handleDemoPaginationClick(btn, pager) {
+        const icon = btn.querySelector('.material-symbols-outlined')?.textContent?.trim();
+        const textNum = btn.textContent.replace(/\s+/g, '').trim();
+        let page = parseInt(pager.dataset.demoPage || '1', 10);
+        const maxPage = 12;
+
+        if (icon === 'chevron_left') {
+            if (btn.disabled) {
+                return;
+            }
+            page = Math.max(1, page - 1);
+        } else if (icon === 'chevron_right') {
+            if (btn.disabled) {
+                return;
+            }
+            page = Math.min(maxPage, page + 1);
+        } else if (/^\d+$/.test(textNum)) {
+            page = parseInt(textNum, 10);
+        } else {
+            return;
+        }
+
+        pager.dataset.demoPage = String(page);
+
+        const buttons = [...pager.querySelectorAll('button')];
+        let prevBtn;
+        let nextBtn;
+        buttons.forEach((b) => {
+            const ic = b.querySelector('.material-symbols-outlined')?.textContent?.trim();
+            if (ic === 'chevron_left') {
+                prevBtn = b;
+            } else if (ic === 'chevron_right') {
+                nextBtn = b;
+            }
+        });
+        if (prevBtn) {
+            prevBtn.disabled = page <= 1;
+        }
+        if (nextBtn) {
+            nextBtn.disabled = page >= maxPage;
+        }
+
+        buttons.forEach((b) => {
+            const t = b.textContent.replace(/\s+/g, '').trim();
+            if (/^\d+$/.test(t)) {
+                const n = parseInt(t, 10);
+                const active = n === page;
+                b.classList.toggle('btn-primary', active);
+                b.classList.toggle('btn-secondary', !active);
+            }
+        });
+
+        this.showNotification(`Đã chuyển sang trang ${page} (demo).`, 'info');
+    },
+
+    handleDemoApprovalTabClick(btn, tabRow) {
+        tabRow.querySelectorAll('button').forEach((b) => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-ghost');
+        });
+        btn.classList.remove('btn-ghost');
+        btn.classList.add('btn-primary');
+
+        const filterLabel = btn.textContent.replace(/\s+/g, ' ').trim();
+        const table = document.querySelector('main.main-content [data-table]');
+        if (table) {
+            if (filterLabel === 'Tất cả') {
+                this.filterTable(table, '');
+            } else {
+                this.filterTable(table, filterLabel);
+            }
+        }
+
+        this.showNotification(`Đang hiển thị nhóm: ${filterLabel}`, 'success');
+    },
+
+    handleDemoWeekSelectorClick(btn, weekSel, icon, label) {
+        const heading = weekSel.querySelector('h2, h3');
+        const sub = weekSel.querySelector('p.body-sm');
+
+        if (label.includes('Hôm nay') || icon === 'today') {
+            if (heading) {
+                heading.textContent = 'Tuần 18/2024';
+            }
+            if (sub) {
+                sub.textContent = '29/04/2024 - 05/05/2024';
+            }
+            this.showNotification('Đã nhảy về tuần hiện tại (demo).', 'success');
+            return;
+        }
+
+        const match = heading?.textContent?.match(/Tuần\s+(\d+)\s*\/\s*(\d+)/);
+        if (match && heading) {
+            let week = parseInt(match[1], 10);
+            const year = parseInt(match[2], 10);
+            if (icon === 'chevron_left') {
+                week = Math.max(1, week - 1);
+            } else if (icon === 'chevron_right') {
+                week = Math.min(53, week + 1);
+            }
+            heading.textContent = `Tuần ${week}/${year}`;
+        }
+
+        this.showNotification('Đã đổi tuần xem timesheet (demo).', 'info');
+    },
+
+    handleDemoTitleAction(btn, title) {
+        const row = btn.closest('tbody tr');
+        if (!row) {
+            return false;
+        }
+
+        const disableRowActions = () => {
+            row.querySelectorAll('button').forEach((b) => {
+                b.disabled = true;
+            });
+        };
+
+        if (title === 'Phê duyệt') {
+            const badge = row.querySelector('.badge');
+            if (badge) {
+                badge.className = 'badge badge-success';
+                badge.textContent = 'Đã duyệt';
+            }
+            disableRowActions();
+            this.showNotification('Đã phê duyệt yêu cầu (demo).', 'success');
+            return true;
+        }
+
+        if (title === 'Từ chối') {
+            const badge = row.querySelector('.badge');
+            if (badge) {
+                badge.className = 'badge badge-error';
+                badge.textContent = 'Đã từ chối';
+            }
+            disableRowActions();
+            this.showNotification('Đã từ chối yêu cầu (demo).', 'success');
+            return true;
+        }
+
+        if (title === 'Xem chi tiết') {
+            const cells = [...row.querySelectorAll('td')]
+                .map((td) => td.innerText.replace(/\s+/g, ' ').trim())
+                .filter(Boolean);
+            const preview = cells.slice(0, 5).join(' · ');
+            this.showNotification(preview ? `Chi tiết: ${preview}` : 'Đang mở chi tiết (demo).', 'info');
+            return true;
+        }
+
+        if (title === 'Sửa') {
+            const nameCell = row.querySelector('td:nth-child(3)') || row.querySelector('td:nth-child(2)');
+            const name = nameCell?.innerText.trim().split('\n')[0] || 'mục';
+            this.showNotification(`Mở form chỉnh sửa: ${name} (demo).`, 'info');
+            return true;
+        }
+
+        return false;
+    },
+
+    handleDemoLabelAction(btn, label, icon) {
+        const lower = label.toLowerCase();
+
+        if (lower.includes('làm mới') || icon === 'refresh') {
+            this.showNotification('Đã làm mới dữ liệu hiển thị (demo).', 'success');
+            return true;
+        }
+
+        if (lower.includes('xuất excel') || (lower.includes('xuất') && lower.includes('excel'))) {
+            this.showNotification('Đang xuất file Excel… (demo)', 'success');
+            return true;
+        }
+
+        if (lower.includes('xuất báo cáo') || (lower.includes('báo cáo') && icon === 'download')) {
+            this.showNotification('Đang xuất báo cáo… (demo)', 'success');
+            return true;
+        }
+
+        if (lower.includes('bộ lọc') || lower.includes('lọc') || icon === 'filter_list') {
+            this.showNotification('Đã mở bộ lọc nâng cao (demo).', 'info');
+            return true;
+        }
+
+        if (lower.includes('thêm nhân viên')) {
+            this.showNotification('Mở form thêm nhân viên mới (demo).', 'info');
+            return true;
+        }
+
+        if (lower.includes('tạo dự án')) {
+            this.showNotification('Mở form tạo dự án mới (demo).', 'info');
+            return true;
+        }
+
+        if (lower.includes('in báo cáo') || icon === 'print') {
+            window.print();
+            return true;
+        }
+
+        if (lower.includes('gửi duyệt') || lower.includes('gửi phê duyệt')) {
+            this.showNotification('Đã gửi phiếu để phê duyệt (demo).', 'success');
+            return true;
+        }
+
+        if (lower.includes('lưu nháp') || icon === 'save') {
+            this.showNotification('Đã lưu nháp timesheet (demo).', 'success');
+            return true;
+        }
+
+        if (lower.includes('thêm dòng')) {
+            this.demoAppendTimesheetRow(btn);
+            return true;
+        }
+
+        if (lower.includes('sao chép tuần trước')) {
+            this.showNotification('Đã sao chép giờ từ tuần trước (demo).', 'success');
+            return true;
+        }
+
+        if (icon === 'mail' || lower === 'mail') {
+            this.showNotification('Đã mở email chúc mừng (demo).', 'info');
+            return true;
+        }
+
+        if (lower.includes('xem lịch')) {
+            this.showNotification('Đang mở lịch đầy đủ (demo).', 'info');
+            return true;
+        }
+
+        return false;
+    },
+
+    demoAppendTimesheetRow(btn) {
+        const table = btn.closest('.main-content')?.querySelector('table.timesheet-table');
+        const tbody = table?.querySelector('tbody');
+        if (!tbody) {
+            this.showNotification('Không tìm thấy bảng timesheet.', 'error');
+            return;
+        }
+
+        const totalRow = tbody.querySelector('tr.total-row');
+        const proto = tbody.querySelector('tr:not(.total-row)');
+        if (!proto || !totalRow) {
+            this.showNotification('Đã ghi nhận thêm dòng (demo).', 'info');
+            return;
+        }
+
+        const tr = proto.cloneNode(true);
+        tr.querySelectorAll('.hours-cell').forEach((cell) => {
+            cell.textContent = '0.0';
+        });
+        const totalCell = tr.querySelector('.total-cell');
+        if (totalCell) {
+            totalCell.textContent = '0.0';
+        }
+        if (tr.cells[0]) {
+            tr.cells[0].textContent = 'Nhân viên (dòng mới)';
+        }
+        const badge = tr.querySelector('.badge');
+        if (badge) {
+            badge.className = 'badge badge-neutral';
+            badge.textContent = 'Nháp';
+        }
+
+        tbody.insertBefore(tr, totalRow);
+        this.showNotification('Đã thêm một dòng nhập giờ (demo).', 'success');
+    },
+
     // Load user data
     loadUserData() {
         const userData = this.getStoredUserData() || this.config.demoUser;
@@ -423,6 +789,7 @@ const ERPApp = {
         const userNameEl = document.querySelector('[data-user-name]');
         const userRoleEl = document.querySelector('[data-user-role]');
         const userAvatarEl = document.querySelector('[data-user-avatar]');
+        const userInitialsEl = document.querySelector('[data-user-initials]');
 
         if (userNameEl) userNameEl.textContent = userData.name;
         if (userRoleEl) userRoleEl.textContent = userData.role || 'Người dùng hệ thống';
@@ -432,6 +799,9 @@ const ERPApp = {
             } else {
                 userAvatarEl.textContent = userData.initials || this.buildInitials(userData.name);
             }
+        }
+        if (userInitialsEl) {
+            userInitialsEl.textContent = userData.initials || this.buildInitials(userData.name);
         }
     },
 
@@ -469,7 +839,10 @@ const ERPApp = {
     },
 
     setupTableFilter(table) {
-        const filterInput = table.parentElement.querySelector('[data-table-filter]');
+        let filterInput = table.parentElement?.querySelector('[data-table-filter]');
+        if (!filterInput) {
+            filterInput = table.closest('.table-container')?.querySelector('[data-table-filter]');
+        }
 
         if (filterInput) {
             filterInput.addEventListener('input', (e) => {
