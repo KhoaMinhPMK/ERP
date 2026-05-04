@@ -1,0 +1,64 @@
+<!-- Page Header Component -->
+<header class="page-header">
+    <div>
+        <h1 class="h1" id="page-title">Trang chủ</h1>
+        <p class="body-sm" style="color: var(--on-surface-variant); margin-top: 4px;" id="page-subtitle">
+            Tổng quan hoạt động hệ thống
+        </p>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <!-- Search -->
+        <div style="position: relative;">
+            <input
+                type="text"
+                class="input"
+                placeholder="Tìm kiếm..."
+                style="width: 300px; padding-left: 40px;"
+            />
+            <span class="material-symbols-outlined" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--on-surface-variant); font-size: 20px;">
+                search
+            </span>
+        </div>
+
+        <!-- Notifications -->
+        <button class="btn-ghost" style="position: relative; padding: 8px; border-radius: 50%;">
+            <span class="material-symbols-outlined">notifications</span>
+            <span style="position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; background-color: var(--error); border-radius: 50%; border: 2px solid var(--background);"></span>
+        </button>
+
+        <!-- User Menu -->
+        <div data-dropdown>
+            <button class="btn-secondary" data-dropdown-trigger style="gap: 8px;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background-color: var(--primary-fixed); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: var(--primary);">
+                    NV
+                </div>
+                <span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+            </button>
+            <div data-dropdown-menu class="dropdown-menu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 8px; background: var(--surface-container-lowest); border: 1px solid var(--outline-variant); border-radius: var(--radius-default); box-shadow: var(--shadow-lg); min-width: 200px; z-index: 100;">
+                <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--on-surface); text-decoration: none; transition: background-color 150ms;">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">person</span>
+                    <span>Hồ sơ cá nhân</span>
+                </a>
+                <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--on-surface); text-decoration: none; transition: background-color 150ms;">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+                    <span>Cài đặt</span>
+                </a>
+                <hr style="margin: 8px 0; border: none; border-top: 1px solid var(--outline-variant);">
+                <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--error); text-decoration: none; transition: background-color 150ms;">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">logout</span>
+                    <span>Đăng xuất</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+.dropdown-menu.active {
+    display: block !important;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--surface-container-low);
+}
+</style>

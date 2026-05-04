@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghi nhận công việc (Timesheet) - Vận Hành ERP</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="../../assets/css/design-system.css">
+
+    
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body data-page="timesheet">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="page-inline-e2ff0fd1a7">
+                <div class="page-inline-7cb78931b2">
+                    <span class="material-symbols-outlined filled page-inline-c8a61d4de0">corporate_fare</span>
+                </div>
+                <div>
+                    <h1 class="page-inline-da7ddcd0ea">Vận Hành ERP</h1>
+                    <p class="page-inline-91ccfc4ebd">Vietnamese SMB Edition</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <a href="../../index.html" class="sidebar-link">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>Tổng quan</span>
+            </a>
+            <a href="../quan-ly-nhan-su/index.html" class="sidebar-link">
+                <span class="material-symbols-outlined">group</span>
+                <span>Nhân sự</span>
+            </a>
+            <a href="../quan-ly-du-an/index.html" class="sidebar-link">
+                <span class="material-symbols-outlined">folder</span>
+                <span>Dự án</span>
+            </a>
+            <a href="../trung-tam-phe-duyet/index.html" class="sidebar-link">
+                <span class="material-symbols-outlined">task_alt</span>
+                <span>Phê duyệt</span>
+            </a>
+            <a href="../ghi-nhan-cong-viec/index.html" class="sidebar-link active">
+                <span class="material-symbols-outlined">schedule</span>
+                <span>Timesheet</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="material-symbols-outlined">payments</span>
+                <span>Tài chính</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="material-symbols-outlined">bar_chart</span>
+                <span>Báo cáo</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="material-symbols-outlined">settings</span>
+                <span>Cài đặt</span>
+            </a>
+        </div>
+
+        <div class="page-inline-711681ecfb">
+            <div class="page-inline-e2ff0fd1a7">
+                <div class="page-inline-436428a485">
+                    NV
+                </div>
+                <div class="page-inline-ee3d55bf99">
+                    <div class="page-inline-4e189ebeb3">Nguyễn Văn A</div>
+                    <div class="page-inline-76ef5af46a">Quản trị viên</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <header class="page-header">
+            <div>
+                <h1 class="h1">Ghi nhận công việc (Timesheet)</h1>
+                <p class="body-sm page-inline-8d881f51ca">
+                    Theo dõi và quản lý giờ làm việc của nhân viên
+                </p>
+            </div>
+            <div class="page-inline-e2ff0fd1a7">
+                <button class="btn-ghost">
+                    <span class="material-symbols-outlined">download</span>
+                    <span>Xuất Excel</span>
+                </button>
+                <button class="btn-secondary">
+                    <span class="material-symbols-outlined">print</span>
+                    <span>In báo cáo</span>
+                </button>
+                <button class="btn-primary">
+                    <span class="material-symbols-outlined">send</span>
+                    <span>Gửi duyệt</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Week Selector -->
+        <div class="week-selector">
+            <button class="btn-secondary page-inline-cb92ec43c6">
+                <span class="material-symbols-outlined page-inline-4ef9d2a6df">chevron_left</span>
+            </button>
+            <div class="page-inline-6a6589aa65">
+                <h3 class="h2 page-inline-b87efa5bc3">Tuần 18/2024</h3>
+                <p class="body-sm page-inline-8d881f51ca">
+                    29/04/2024 - 05/05/2024
+                </p>
+            </div>
+            <button class="btn-secondary page-inline-cb92ec43c6">
+                <span class="material-symbols-outlined page-inline-4ef9d2a6df">chevron_right</span>
+            </button>
+            <button class="btn-ghost">
+                <span class="material-symbols-outlined">today</span>
+                <span>Hôm nay</span>
+            </button>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="grid grid-cols-4 page-inline-8d703344e0">
+            <div class="card page-inline-872b6653b3">
+                <p class="body-sm page-inline-04b5fef24d">Tổng giờ tuần</p>
+                <h2 class="h1 page-inline-b6bb4c036e">140.0</h2>
+                <p class="body-sm page-inline-8d881f51ca">giờ</p>
+            </div>
+            <div class="card page-inline-872b6653b3">
+                <p class="body-sm page-inline-04b5fef24d">Trung bình/người</p>
+                <h2 class="h1 page-inline-b6bb4c036e">35.0</h2>
+                <p class="body-sm page-inline-8d881f51ca">giờ/người</p>
+            </div>
+            <div class="card page-inline-872b6653b3">
+                <p class="body-sm page-inline-04b5fef24d">Đã gửi duyệt</p>
+                <h2 class="h1 page-inline-b6bb4c036e">2</h2>
+                <p class="body-sm page-inline-8d881f51ca">nhân viên</p>
+            </div>
+            <div class="card page-inline-872b6653b3">
+                <p class="body-sm page-inline-04b5fef24d">Chưa gửi</p>
+                <h2 class="h1 page-inline-46c08d98c4">2</h2>
+                <p class="body-sm page-inline-8d881f51ca">nhân viên</p>
+            </div>
+        </div>
+
+        <!-- Timesheet Table -->
+        <div class="page-inline-c4a506d31e">
+            <table class="timesheet-table">
+                <thead>
+                    <tr>
+                        <th class="page-inline-c0b1063ffd">Nhân viên</th>
+                        <th class="page-inline-824cd122cb">Dự án</th>
+                        <th class="page-inline-824cd122cb">Công việc</th>
+                        <th class="page-inline-5ce5168e65">T2<br/>29/04</th>
+                        <th class="page-inline-5ce5168e65">T3<br/>30/04</th>
+                        <th class="page-inline-5ce5168e65">T4<br/>01/05</th>
+                        <th class="page-inline-5ce5168e65">T5<br/>02/05</th>
+                        <th class="page-inline-5ce5168e65">T6<br/>03/05</th>
+                        <th class="page-inline-4236113468">Tổng</th>
+                        <th class="page-inline-659f7ba3ca">Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employee 1 -->
+                    <tr>
+                        <td>Nguyễn Văn A</td>
+                        <td>Triển khai ERP</td>
+                        <td class="page-inline-6d1366ccbd">Phát triển module nhân sự</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="total-cell">40.0</td>
+                        <td class="page-inline-72a68ac344">
+                            <span class="badge badge-success">Đã duyệt</span>
+                        </td>
+                    </tr>
+                    <!-- Employee 2 -->
+                    <tr>
+                        <td>Trần Thị B</td>
+                        <td>Hệ thống Core ERP</td>
+                        <td class="page-inline-6d1366ccbd">Kiểm thử UAT</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">4.0</td>
+                        <td class="hours-cell page-inline-0c485c839a">-</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="total-cell">28.0</td>
+                        <td class="page-inline-72a68ac344">
+                            <span class="badge badge-warning">Chờ duyệt</span>
+                        </td>
+                    </tr>
+                    <!-- Employee 3 -->
+                    <tr>
+                        <td>Lê Văn C</td>
+                        <td>Tái cấu trúc UI/UX</td>
+                        <td class="page-inline-6d1366ccbd">Thiết kế Design System</td>
+                        <td class="hours-cell">4.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">4.0</td>
+                        <td class="total-cell">32.0</td>
+                        <td class="page-inline-72a68ac344">
+                            <span class="badge badge-neutral">Nháp</span>
+                        </td>
+                    </tr>
+                    <!-- Employee 4 -->
+                    <tr>
+                        <td>Phạm Tuấn D</td>
+                        <td>Bảo trì hệ thống cũ</td>
+                        <td class="page-inline-6d1366ccbd">Hỗ trợ khách hàng VIP</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="hours-cell">8.0</td>
+                        <td class="total-cell">40.0</td>
+                        <td class="page-inline-72a68ac344">
+                            <span class="badge badge-warning">Chờ duyệt</span>
+                        </td>
+                    </tr>
+                    <!-- Total Row -->
+                    <tr class="total-row">
+                        <td class="page-inline-f2f9fb242a" colspan="3">Tổng cộng trang này:</td>
+                        <td class="hours-cell">28.0</td>
+                        <td class="hours-cell">28.0</td>
+                        <td class="hours-cell">24.0</td>
+                        <td class="hours-cell">32.0</td>
+                        <td class="hours-cell">28.0</td>
+                        <td class="total-cell page-inline-df67104f3b">140.0</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="page-inline-d341cabf19">
+            <div class="page-inline-d6316a7e0b">
+                <button class="btn-ghost">
+                    <span class="material-symbols-outlined">add</span>
+                    <span>Thêm dòng</span>
+                </button>
+                <button class="btn-ghost">
+                    <span class="material-symbols-outlined">content_copy</span>
+                    <span>Sao chép tuần trước</span>
+                </button>
+            </div>
+            <div class="page-inline-d6316a7e0b">
+                <button class="btn-secondary">
+                    <span class="material-symbols-outlined">save</span>
+                    <span>Lưu nháp</span>
+                </button>
+                <button class="btn-primary">
+                    <span class="material-symbols-outlined">send</span>
+                    <span>Gửi phê duyệt</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/app.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

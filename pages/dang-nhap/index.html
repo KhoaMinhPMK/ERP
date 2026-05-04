@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Vận Hành ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/design-system.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body data-page="login" class="login-page">
+    <main class="login-shell">
+        <section class="login-brand-panel">
+            <div class="login-brand-badge">
+                <span class="material-symbols-outlined filled">corporate_fare</span>
+            </div>
+            <p class="label-caps login-eyebrow">Hệ điều hành doanh nghiệp</p>
+            <h1 class="login-title">Đăng nhập vào trung tâm vận hành ERP</h1>
+            <p class="login-description">
+                Truy cập nhân sự, dự án, phê duyệt, tài chính và báo cáo trên cùng một luồng điều hành.
+            </p>
+
+            <div class="login-value-list">
+                <article class="login-value-card">
+                    <h2 class="h2">Điều phối theo vai trò</h2>
+                    <p class="body-sm">Mỗi phiên đăng nhập gắn với vai trò điều hành để hệ thống ưu tiên đúng công việc cần xử lý.</p>
+                </article>
+                <article class="login-value-card">
+                    <h2 class="h2">Tập trung vào workflow</h2>
+                    <p class="body-sm">Mọi module đều hướng tới quyết định vận hành thay vì các khối hiển thị trang trí.</p>
+                </article>
+                <article class="login-value-card">
+                    <h2 class="h2">Dữ liệu demo</h2>
+                    <p class="body-sm">Có thể nhập thông tin bất kỳ. Phiên đăng nhập được lưu cục bộ để mô phỏng login và logout.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="login-form-panel card">
+            <div class="login-form-header">
+                <p class="label-caps">Phiên điều hành mới</p>
+                <h2 class="h1">Đăng nhập</h2>
+                <p class="body-sm login-form-subtitle">Thiết lập nhanh hồ sơ người dùng để truy cập workspace demo.</p>
+            </div>
+
+            <form data-login-form class="login-form">
+                <label class="login-field">
+                    <span class="login-field-label">Họ và tên</span>
+                    <input class="input" type="text" name="fullName" placeholder="Nguyễn Văn A" required>
+                </label>
+
+                <label class="login-field">
+                    <span class="login-field-label">Email công việc</span>
+                    <input class="input" type="email" name="email" placeholder="ops.director@vanhanherp.vn" required>
+                </label>
+
+                <label class="login-field">
+                    <span class="login-field-label">Vai trò vận hành</span>
+                    <select class="input" name="role">
+                        <option value="Giám đốc vận hành">Giám đốc vận hành</option>
+                        <option value="Kế toán trưởng">Kế toán trưởng</option>
+                        <option value="Trưởng phòng nhân sự">Trưởng phòng nhân sự</option>
+                        <option value="Quản lý PMO">Quản lý PMO</option>
+                    </select>
+                </label>
+
+                <label class="login-field">
+                    <span class="login-field-label">Mật khẩu</span>
+                    <input class="input" type="password" name="password" placeholder="demo-demo" required>
+                </label>
+
+                <button type="submit" class="btn-primary login-submit">
+                    <span class="material-symbols-outlined">login</span>
+                    <span>Vào trung tâm điều hành</span>
+                </button>
+            </form>
+
+            <div class="login-help-box">
+                <span class="material-symbols-outlined">shield_person</span>
+                <p class="body-sm">Phiên đăng nhập chỉ lưu trong local storage của trình duyệt để mô phỏng hành vi đăng nhập và đăng xuất.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../assets/js/app.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+.week-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background-color: var(--surface-container-lowest);
+            border: 1px solid var(--outline-variant);
+            border-radius: var(--radius-default);
+            margin-bottom: 24px;
+        }
+
+        .timesheet-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--surface-container-lowest);
+            border: 1px solid var(--outline-variant);
+            border-radius: var(--radius-default);
+            overflow: hidden;
+        }
+
+        .timesheet-table th {
+            background-color: var(--surface-container-high);
+            padding: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: left;
+            border-right: 1px solid var(--outline-variant);
+            border-bottom: 1px solid var(--outline-variant);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .timesheet-table td {
+            padding: 12px;
+            font-size: 13px;
+            border-right: 1px solid var(--outline-variant);
+            border-bottom: 1px solid var(--outline-variant);
+        }
+
+        .timesheet-table tbody tr:hover {
+            background-color: var(--surface-container-low);
+        }
+
+        .timesheet-table td:first-child {
+            position: sticky;
+            left: 0;
+            background-color: var(--surface-container-lowest);
+            font-weight: 600;
+            z-index: 5;
+        }
+
+        .timesheet-table tbody tr:hover td:first-child {
+            background-color: var(--surface-container-low);
+        }
+
+        .timesheet-table td.hours-cell {
+            text-align: right;
+            font-family: monospace;
+        }
+
+        .timesheet-table td.total-cell {
+            background-color: var(--surface-container-high);
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .timesheet-table tr.total-row {
+            background-color: var(--surface-container-high);
+            font-weight: 700;
+        }
+
+        .timesheet-table tr.total-row td {
+            border-top: 2px solid var(--outline-variant);
+        }
+
+.page-inline-e2ff0fd1a7 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-inline-7cb78931b2 {
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-fixed);
+    border-radius: var(--radius-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-inline-c8a61d4de0 {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.page-inline-da7ddcd0ea {
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.page-inline-91ccfc4ebd {
+    color: #94a3b8;
+    font-size: 10px;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.page-inline-711681ecfb {
+    padding: 16px;
+    border-top: 1px solid #1e293b;
+}
+
+.page-inline-436428a485 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-fixed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.page-inline-ee3d55bf99 {
+    flex: 1;
+}
+
+.page-inline-4e189ebeb3 {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.page-inline-76ef5af46a {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.page-inline-8d881f51ca {
+    color: var(--on-surface-variant);
+    margin-top: 4px;
+}
+
+.page-inline-cb92ec43c6 {
+    padding: 8px;
+}
+
+.page-inline-4ef9d2a6df {
+    font-size: 20px;
+}
+
+.page-inline-6a6589aa65 {
+    flex: 1;
+    text-align: center;
+}
+
+.page-inline-b87efa5bc3 {
+    font-size: 16px;
+}
+
+.page-inline-8d703344e0 {
+    margin-bottom: 24px;
+}
+
+.page-inline-872b6653b3 {
+    padding: 16px;
+}
+
+.page-inline-04b5fef24d {
+    color: var(--on-surface-variant);
+    margin-bottom: 8px;
+}
+
+.page-inline-b6bb4c036e {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.page-inline-46c08d98c4 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #e65100;
+}
+
+.page-inline-c4a506d31e {
+    overflow-x: auto;
+    border-radius: var(--radius-default);
+}
+
+.page-inline-c0b1063ffd {
+    min-width: 150px;
+}
+
+.page-inline-824cd122cb {
+    min-width: 200px;
+}
+
+.page-inline-5ce5168e65 {
+    min-width: 80px;
+    text-align: right;
+}
+
+.page-inline-4236113468 {
+    min-width: 100px;
+    text-align: right;
+}
+
+.page-inline-659f7ba3ca {
+    min-width: 120px;
+    text-align: center;
+}
+
+.page-inline-6d1366ccbd {
+    color: var(--on-surface-variant);
+}
+
+.page-inline-72a68ac344 {
+    text-align: center;
+}
+
+.page-inline-0c485c839a {
+    background-color: var(--surface-container-high);
+}
+
+.page-inline-f2f9fb242a {
+    text-align: right;
+    color: var(--on-surface-variant);
+}
+
+.page-inline-df67104f3b {
+    font-size: 14px;
+}
+
+.page-inline-d341cabf19 {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-inline-d6316a7e0b {
+    display: flex;
+    gap: 12px;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "van-hanh-erp-demo",
+  "version": "1.0.0",
+  "description": "Hệ thống ERP demo cho doanh nghiệp Việt Nam - Vietnamese SMB Edition",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=8080 --open=index.html",
+    "dev": "live-server --port=8080",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "erp",
+    "vietnamese",
+    "smb",
+    "enterprise",
+    "dashboard",
+    "admin",
+    "management"
+  ],
+  "author": "Development Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/van-hanh-erp-demo"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/van-hanh-erp-demo/issues"
+  },
+  "homepage": "https://github.com/your-org/van-hanh-erp-demo#readme"
+}

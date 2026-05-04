@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý dự án - Vận Hành ERP</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="../../assets/css/design-system.css">
+
+    
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body data-page="projects">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="page-inline-e2ff0fd1a7">
+                <div class="page-inline-7cb78931b2">
+                    <span class="material-symbols-outlined filled page-inline-c8a61d4de0">corporate_fare</span>
+                </div>
+                <div>
+                    <h1 class="page-inline-da7ddcd0ea">Vận Hành ERP</h1>
+                    <p class="page-inline-91ccfc4ebd">Vietnamese SMB Edition</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <a href="../../index.html" class="sidebar-link">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>Tổng quan</span>
+            </a>
+            <a href="../quan-ly-nhan-su/index.html" class="sidebar-link">
+                <span class="material-symbols-outlined">group</span>
+                <span>Nhân sự</span>
+            </a>
+            <a href="../quan-ly-du-an/index.html" class="sidebar-link active">
+                <span class="material-symbols-outlined">folder</span>
+                <span>Dự án</span>
+            </a>
+            <a href="../trung-tam-phe-duyet/index.html" class="sidebar-link">
+                <span class="material-symbols-outlined">task_alt</span>
+                <span>Phê duyệt</span>
+            </a>
+            <a href="../ghi-nhan-cong-viec/index.html" class="sidebar-link">
+                <span class="material-symbols-outlined">schedule</span>
+                <span>Timesheet</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="material-symbols-outlined">payments</span>
+                <span>Tài chính</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="material-symbols-outlined">bar_chart</span>
+                <span>Báo cáo</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <span class="material-symbols-outlined">settings</span>
+                <span>Cài đặt</span>
+            </a>
+        </div>
+
+        <div class="page-inline-711681ecfb">
+            <div class="page-inline-e2ff0fd1a7">
+                <div class="page-inline-436428a485">
+                    NV
+                </div>
+                <div class="page-inline-ee3d55bf99">
+                    <div class="page-inline-4e189ebeb3">Nguyễn Văn A</div>
+                    <div class="page-inline-76ef5af46a">Quản trị viên</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <header class="page-header">
+            <div>
+                <h1 class="h1">Quản lý dự án</h1>
+                <p class="body-sm page-inline-8d881f51ca">
+                    Theo dõi tiến độ và quản lý tài nguyên dự án
+                </p>
+            </div>
+            <div class="page-inline-e2ff0fd1a7">
+                <button class="btn-ghost">
+                    <span class="material-symbols-outlined">download</span>
+                    <span>Xuất báo cáo</span>
+                </button>
+                <button class="btn-primary">
+                    <span class="material-symbols-outlined">add</span>
+                    <span>Tạo dự án mới</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- KPI Cards -->
+        <div class="stats-grid">
+            <!-- Total Projects -->
+            <div class="card page-inline-f8d354e012">
+                <div class="page-inline-89fb9c9d41">
+                    <div>
+                        <p class="body-sm page-inline-04b5fef24d">Tổng dự án</p>
+                        <h2 class="h1 page-inline-6e94fd8e4d">142</h2>
+                    </div>
+                    <div class="page-inline-1476885167">
+                        <span class="material-symbols-outlined page-inline-a5d449ee1b">folder</span>
+                    </div>
+                </div>
+                <div class="page-inline-3088da1131">
+                    <span class="page-inline-61769c283d">
+                        <span class="material-symbols-outlined page-inline-35868dad24">trending_up</span>
+                        <span>+8</span>
+                    </span>
+                    <span class="body-sm page-inline-6d1366ccbd">dự án mới tháng này</span>
+                </div>
+            </div>
+
+            <!-- In Progress -->
+            <div class="card page-inline-f8d354e012">
+                <div class="page-inline-89fb9c9d41">
+                    <div>
+                        <p class="body-sm page-inline-04b5fef24d">Đang thực hiện</p>
+                        <h2 class="h1 page-inline-6e94fd8e4d">18</h2>
+                    </div>
+                    <div class="page-inline-52b81ef11d">
+                        <span class="material-symbols-outlined page-inline-ad31ebb0ee">play_circle</span>
+                    </div>
+                </div>
+                <div class="page-inline-3088da1131">
+                    <span class="page-inline-434b368bdb">
+                        <span>Tiến độ TB:</span>
+                    </span>
+                    <span class="body-sm page-inline-61883aeffd">68%</span>
+                </div>
+            </div>
+
+            <!-- At Risk -->
+            <div class="card page-inline-f8d354e012">
+                <div class="page-inline-89fb9c9d41">
+                    <div>
+                        <p class="body-sm page-inline-04b5fef24d">Có rủi ro</p>
+                        <h2 class="h1 page-inline-6e94fd8e4d">3</h2>
+                    </div>
+                    <div class="page-inline-a7d1009634">
+                        <span class="material-symbols-outlined page-inline-f4d48628d0">warning</span>
+                    </div>
+                </div>
+                <div class="page-inline-3088da1131">
+                    <span class="page-inline-0a2b715a62">
+                        <span class="material-symbols-outlined page-inline-35868dad24">error</span>
+                        <span>1 quá hạn</span>
+                    </span>
+                    <span class="body-sm page-inline-6d1366ccbd">cần xử lý</span>
+                </div>
+            </div>
+
+            <!-- Completed -->
+            <div class="card page-inline-f8d354e012">
+                <div class="page-inline-89fb9c9d41">
+                    <div>
+                        <p class="body-sm page-inline-04b5fef24d">Hoàn thành (tháng)</p>
+                        <h2 class="h1 page-inline-6e94fd8e4d">5</h2>
+                    </div>
+                    <div class="page-inline-ea3813567d">
+                        <span class="material-symbols-outlined page-inline-76bec71a7e">check_circle</span>
+                    </div>
+                </div>
+                <div class="page-inline-3088da1131">
+                    <span class="page-inline-61769c283d">
+                        <span>100%</span>
+                    </span>
+                    <span class="body-sm page-inline-6d1366ccbd">đúng hạn</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Table -->
+        <div class="table-container">
+            <!-- Table Header -->
+            <div class="page-inline-3eed6eaf06">
+                <div class="page-inline-e2ff0fd1a7">
+                    <h3 class="h2 page-inline-b87efa5bc3">Danh sách dự án</h3>
+                    <span class="badge badge-neutral">142 dự án</span>
+                </div>
+                <div class="page-inline-e2ff0fd1a7">
+                    <!-- Search -->
+                    <div class="page-inline-50666a574d">
+                        <input
+                            type="text"
+                            class="input page-inline-4aa6f9c1b9"
+                            placeholder="Tìm kiếm dự án..."
+                            data-table-filter
+                           
+                        />
+                        <span class="material-symbols-outlined page-inline-729b799f55">
+                            search
+                        </span>
+                    </div>
+                    <!-- Filter -->
+                    <button class="btn-secondary page-inline-3b25a3db9c">
+                        <span class="material-symbols-outlined page-inline-35868dad24">filter_list</span>
+                        <span>Lọc</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="page-inline-42d4450c02">
+                <table class="table" data-table>
+                    <thead>
+                        <tr>
+                            <th class="page-inline-d230d151d1">
+                                <input class="page-inline-8410c989c9" type="checkbox" />
+                            </th>
+                            <th>Mã dự án</th>
+                            <th>Tên dự án</th>
+                            <th>Quản lý</th>
+                            <th>Tiến độ</th>
+                            <th class="page-inline-13cbe03b9a">Ngân sách</th>
+                            <th>Deadline</th>
+                            <th>Mức độ</th>
+                            <th>Trạng thái</th>
+                            <th class="page-inline-9a92149cac">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input class="page-inline-8410c989c9" type="checkbox" /></td>
+                            <td class="page-inline-5c05f4afaf">PRJ-023</td>
+                            <td class="page-inline-5c05f4afaf">Triển khai hệ thống ERP mới</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>
+                                <div class="page-inline-3088da1131">
+                                    <div class="progress-bar page-inline-ee3d55bf99">
+                                        <div class="progress-fill page-inline-8f74bee013"></div>
+                                    </div>
+                                    <span class="body-sm page-inline-e76e65dffc">65%</span>
+                                </div>
+                            </td>
+                            <td class="page-inline-5235fe5ec5">2,500,000,000 ₫</td>
+                            <td class="page-inline-6d1366ccbd">25/12/2024</td>
+                            <td><span class="badge badge-error">Cao</span></td>
+                            <td><span class="badge badge-info">Đang làm</span></td>
+                            <td class="page-inline-72a68ac344">
+                                <div class="page-inline-1599760cbb">
+                                    <button class="btn-ghost page-inline-2bd6402e85" title="Xem chi tiết">
+                                        <span class="material-symbols-outlined page-inline-35868dad24">visibility</span>
+                                    </button>
+                                    <button class="btn-ghost page-inline-2bd6402e85" title="Sửa">
+                                        <span class="material-symbols-outlined page-inline-35868dad24">edit</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input class="page-inline-8410c989c9" type="checkbox" /></td>
+                            <td class="page-inline-5c05f4afaf">PRJ-034</td>
+                            <td class="page-inline-5c05f4afaf">Nâng cấp website công ty</td>
+                            <td>Trần Thị B</td>
+                            <td>
+                                <div class="page-inline-3088da1131">
+                                    <div class="progress-bar page-inline-ee3d55bf99">
+                                        <div class="progress-fill page-inline-a6cc33e567"></div>
+                                    </div>
+                                    <span class="body-sm page-inline-a306c522a1">15%</span>
+                                </div>
+                            </td>
+                            <td class="page-inline-c564b8fa9b">500,000,000 ₫</td>
+                            <td class="page-inline-530326ebcc">10/10/2024</td>
+                            <td><span class="badge badge-warning">T.Bình</span></td>
+                            <td><span class="badge badge-error">Quá hạn</span></td>
+                            <td class="page-inline-72a68ac344">
+                                <div class="page-inline-1599760cbb">
+                                    <button class="btn-ghost page-inline-2bd6402e85" title="Xem chi tiết">
+                                        <span class="material-symbols-outlined page-inline-35868dad24">visibility</span>
+                                    </button>
+                                    <button class="btn-ghost page-inline-2bd6402e85" title="Sửa">
+                                        <span class="material-symbols-outlined page-inline-35868dad24">edit</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input class="page-inline-8410c989c9" type="checkbox" /></td>
+                            <td class="page-inline-5c05f4afaf">PRJ-045</td>
+                            <td class="page-inline-5c05f4afaf">Nâng cấp hạ tầng Server</td>
+                            <td>Lê Văn C</td>
+                            <td>
+                                <div class="page-inline-3088da1131">
+                                    <div class="progress-bar page-inline-ee3d55bf99">
+                                        <div class="progress-fill page-inline-65e65658ec"></div>
+                                    </div>
+                                    <span class="body-sm page-inline-e76e65dffc">80%</span>
+                                </div>
+                            </td>
+                            <td class="page-inline-c564b8fa9b">850,000,000 ₫</td>
+                            <td class="page-inline-6d1366ccbd">30/10/2024</td>
+                            <td><span class="badge badge-success">Thấp</span></td>
+                            <td><span class="badge badge-info">Đang làm</span></td>
+                            <td class="page-inline-72a68ac344">
+                                <div class="page-inline-1599760cbb">
+                                    <button class="btn-ghost page-inline-2bd6402e85" title="Xem chi tiết">
+                                        <span class="material-symbols-outlined page-inline-35868dad24">visibility</span>
+                                    </button>
+                                    <button class="btn-ghost page-inline-2bd6402e85" title="Sửa">
+                                        <span class="material-symbols-outlined page-inline-35868dad24">edit</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input class="page-inline-8410c989c9" type="checkbox" /></td>
+                            <td class="page-inline-5c05f4afaf">PRJ-102</td>
+                            <td class="page-inline-5c05f4afaf">Tái cấu trúc bộ máy bán hàng</td>
+                            <td>Phạm Thị D</td>
+                            <td>
+                                <div class="page-inline-3088da1131">
+                                    <div class="progress-bar page-inline-ee3d55bf99">
+                                        <div class="progress-fill page-inline-aa78e24901"></div>
+                                    </div>
+                                    <span class="body-sm page-inline-e76e65dffc">0%</span>
+                                </div>
+                            </td>
+                            <td class="page-inline-6d6ef6db71">0 ₫</td>
+                            <td class="page-inline-6d1366ccbd">01/01/2025</td>
+                            <td><span class="badge badge-success">Thấp</span></td>
+                            <td><span class="badge badge-neutral">Chưa B.Đầu</span></td>
+                            <td class="page-inline-72a68ac344">
+                                <div class="page-inline-1599760cbb">
+                                    <button class="btn-ghost page-inline-2bd6402e85" title="Xem chi tiết">
+                                        <span class="material-symbols-outlined page-inline-35868dad24">visibility</span>
+                                    </button>
+                                    <button class="btn-ghost page-inline-2bd6402e85" title="Sửa">
+                                        <span class="material-symbols-outlined page-inline-35868dad24">edit</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="page-inline-5ee3b17ad2">
+                <span class="body-sm page-inline-6d1366ccbd">
+                    Hiển thị 1-4 trên tổng số 142 dự án
+                </span>
+                <div class="page-inline-d2f87c7fad">
+                    <button class="btn-secondary page-inline-ffb40d47e5" disabled>
+                        <span class="material-symbols-outlined page-inline-b87efa5bc3">chevron_left</span>
+                    </button>
+                    <button class="btn-primary page-inline-ffb40d47e5">1</button>
+                    <button class="btn-secondary page-inline-ffb40d47e5">2</button>
+                    <button class="btn-secondary page-inline-ffb40d47e5">3</button>
+                    <span class="page-inline-6cc5238592">...</span>
+                    <button class="btn-secondary page-inline-ffb40d47e5">
+                        <span class="material-symbols-outlined page-inline-b87efa5bc3">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/app.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

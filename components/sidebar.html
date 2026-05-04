@@ -1,0 +1,80 @@
+<!-- Sidebar Navigation Component -->
+<nav class="sidebar">
+    <!-- Header -->
+    <div class="sidebar-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 32px; height: 32px; background-color: var(--primary-fixed); border-radius: var(--radius-default); display: flex; align-items: center; justify-content: center;">
+                <span class="material-symbols-outlined filled" style="color: var(--primary); font-size: 20px;">corporate_fare</span>
+            </div>
+            <div>
+                <h1 style="color: white; font-weight: 900; font-size: 20px; line-height: 1;">Vận Hành ERP</h1>
+                <p style="color: #94a3b8; font-size: 10px; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Vietnamese SMB Edition</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="sidebar-nav">
+        <a href="index.html" class="sidebar-link" data-page="dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span>Tổng quan</span>
+        </a>
+        <a href="quan-ly-nhan-su.html" class="sidebar-link" data-page="hr">
+            <span class="material-symbols-outlined">group</span>
+            <span>Nhân sự</span>
+        </a>
+        <a href="quan-ly-du-an.html" class="sidebar-link" data-page="projects">
+            <span class="material-symbols-outlined">folder</span>
+            <span>Dự án</span>
+        </a>
+        <a href="trung-tam-phe-duyet.html" class="sidebar-link" data-page="approval">
+            <span class="material-symbols-outlined">task_alt</span>
+            <span>Phê duyệt</span>
+        </a>
+        <a href="ghi-nhan-cong-viec.html" class="sidebar-link" data-page="timesheet">
+            <span class="material-symbols-outlined">schedule</span>
+            <span>Timesheet</span>
+        </a>
+        <a href="#" class="sidebar-link" data-page="finance">
+            <span class="material-symbols-outlined">payments</span>
+            <span>Tài chính</span>
+        </a>
+        <a href="#" class="sidebar-link" data-page="reports">
+            <span class="material-symbols-outlined">bar_chart</span>
+            <span>Báo cáo</span>
+        </a>
+        <a href="#" class="sidebar-link" data-page="settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span>Cài đặt</span>
+        </a>
+    </div>
+
+    <!-- User Profile -->
+    <div style="padding: 16px; border-top: 1px solid #1e293b;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary-fixed); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">
+                NV
+            </div>
+            <div style="flex: 1;">
+                <div style="color: white; font-weight: 600; font-size: 14px;" data-user-name>Nguyễn Văn A</div>
+                <div style="color: #94a3b8; font-size: 12px;">Quản trị viên</div>
+            </div>
+            <button style="background: none; border: none; color: #94a3b8; cursor: pointer; padding: 4px;">
+                <span class="material-symbols-outlined" style="font-size: 20px;">more_vert</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<script>
+// Highlight active page in sidebar
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPage = document.body.dataset.page;
+    if (currentPage) {
+        const activeLink = document.querySelector(`[data-page="${currentPage}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+    }
+});
+</script>

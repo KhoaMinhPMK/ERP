@@ -1,0 +1,218 @@
+{
+  "employees": [
+    {
+      "id": "NV-001",
+      "name": "Nguyễn Văn A",
+      "department": "Phát triển sản phẩm",
+      "position": "Senior Developer",
+      "email": "nguyenvana@company.vn",
+      "phone": "0901234567",
+      "status": "active",
+      "avatar": "NA",
+      "joinDate": "2020-01-15",
+      "salary": 25000000
+    },
+    {
+      "id": "NV-002",
+      "name": "Trần Thị B",
+      "department": "Nhân sự",
+      "position": "HR Manager",
+      "email": "tranthib@company.vn",
+      "phone": "0902345678",
+      "status": "active",
+      "avatar": "TB",
+      "joinDate": "2019-03-20",
+      "salary": 22000000
+    },
+    {
+      "id": "NV-003",
+      "name": "Lê Văn C",
+      "department": "Thiết kế",
+      "position": "UI/UX Designer",
+      "email": "levanc@company.vn",
+      "phone": "0903456789",
+      "status": "on_leave",
+      "avatar": "LC",
+      "joinDate": "2021-06-10",
+      "salary": 18000000
+    },
+    {
+      "id": "NV-004",
+      "name": "Phạm Thị D",
+      "department": "Kinh doanh",
+      "position": "Sales Executive",
+      "email": "phamthid@company.vn",
+      "phone": "0904567890",
+      "status": "active",
+      "avatar": "PD",
+      "joinDate": "2022-02-01",
+      "salary": 15000000
+    }
+  ],
+  "projects": [
+    {
+      "id": "PRJ-023",
+      "name": "Triển khai hệ thống ERP mới",
+      "manager": "Nguyễn Văn A",
+      "progress": 65,
+      "budget": 2500000000,
+      "deadline": "2024-12-25",
+      "priority": "high",
+      "status": "in_progress"
+    },
+    {
+      "id": "PRJ-034",
+      "name": "Nâng cấp website công ty",
+      "manager": "Trần Thị B",
+      "progress": 15,
+      "budget": 500000000,
+      "deadline": "2024-10-10",
+      "priority": "medium",
+      "status": "overdue"
+    },
+    {
+      "id": "PRJ-045",
+      "name": "Nâng cấp hạ tầng Server",
+      "manager": "Lê Văn C",
+      "progress": 80,
+      "budget": 850000000,
+      "deadline": "2024-10-30",
+      "priority": "low",
+      "status": "in_progress"
+    },
+    {
+      "id": "PRJ-102",
+      "name": "Tái cấu trúc bộ máy bán hàng",
+      "manager": "Phạm Thị D",
+      "progress": 0,
+      "budget": 0,
+      "deadline": "2025-01-01",
+      "priority": "low",
+      "status": "not_started"
+    }
+  ],
+  "approvals": [
+    {
+      "id": "APR-001",
+      "type": "leave",
+      "content": "Xin nghỉ phép từ 05/05 đến 07/05",
+      "requester": "Nguyễn Văn A",
+      "requestTime": "2023-11-15T14:00:00",
+      "status": "pending"
+    },
+    {
+      "id": "APR-002",
+      "type": "advance",
+      "content": "Tạm ứng chi phí đi lại dự án Q4",
+      "requester": "Trần Thị B",
+      "requestTime": "2023-11-15T10:00:00",
+      "status": "overdue"
+    },
+    {
+      "id": "APR-003",
+      "type": "contract",
+      "content": "Duyệt hợp đồng cung cấp thiết bị IT",
+      "requester": "Lê Văn C",
+      "requestTime": "2023-11-16T17:30:00",
+      "status": "processing"
+    },
+    {
+      "id": "APR-004",
+      "type": "leave",
+      "content": "Xin nghỉ phép bệnh 2 ngày (08/05 - 09/05)",
+      "requester": "Phạm Thị D",
+      "requestTime": "2026-05-04T09:15:00",
+      "status": "pending"
+    }
+  ],
+  "timesheets": [
+    {
+      "employee": "Nguyễn Văn A",
+      "project": "Triển khai ERP",
+      "task": "Phát triển module nhân sự",
+      "hours": {
+        "mon": 8.0,
+        "tue": 8.0,
+        "wed": 8.0,
+        "thu": 8.0,
+        "fri": 8.0
+      },
+      "total": 40.0,
+      "status": "approved"
+    },
+    {
+      "employee": "Trần Thị B",
+      "project": "Hệ thống Core ERP",
+      "task": "Kiểm thử UAT",
+      "hours": {
+        "mon": 8.0,
+        "tue": 4.0,
+        "wed": 0,
+        "thu": 8.0,
+        "fri": 8.0
+      },
+      "total": 28.0,
+      "status": "pending"
+    },
+    {
+      "employee": "Lê Văn C",
+      "project": "Tái cấu trúc UI/UX",
+      "task": "Thiết kế Design System",
+      "hours": {
+        "mon": 4.0,
+        "tue": 8.0,
+        "wed": 8.0,
+        "thu": 8.0,
+        "fri": 4.0
+      },
+      "total": 32.0,
+      "status": "draft"
+    },
+    {
+      "employee": "Phạm Tuấn D",
+      "project": "Bảo trì hệ thống cũ",
+      "task": "Hỗ trợ khách hàng VIP",
+      "hours": {
+        "mon": 8.0,
+        "tue": 8.0,
+        "wed": 8.0,
+        "thu": 8.0,
+        "fri": 8.0
+      },
+      "total": 40.0,
+      "status": "pending"
+    }
+  ],
+  "kpis": {
+    "dashboard": {
+      "totalEmployees": 248,
+      "activeProjects": 18,
+      "pendingApprovals": 24,
+      "totalHours": 4280
+    },
+    "hr": {
+      "totalEmployees": 248,
+      "activeEmployees": 235,
+      "onLeave": 8,
+      "newHires": 12
+    },
+    "projects": {
+      "totalProjects": 142,
+      "inProgress": 18,
+      "atRisk": 3,
+      "completed": 5
+    },
+    "approvals": {
+      "pending": 24,
+      "approvedToday": 12,
+      "rejectedWeek": 3,
+      "avgTime": "2.5h"
+    },
+    "timesheet": {
+      "totalHours": 140.0,
+      "avgPerPerson": 35.0,
+      "submitted": 2,
+      "notSubmitted": 2
+    }
+  }
+}

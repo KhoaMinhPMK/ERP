@@ -1,0 +1,104 @@
+<!-- Data Table Component -->
+<div class="table-container">
+    <!-- Table Header with Actions -->
+    <div style="padding: 16px; border-bottom: 1px solid var(--outline-variant); display: flex; align-items: center; justify-content: space-between; background-color: var(--surface-container-lowest);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <h3 class="h2" style="font-size: 16px;">Danh sách</h3>
+            <span class="badge badge-neutral" id="table-count">0 mục</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <!-- Search -->
+            <div style="position: relative;">
+                <input
+                    type="text"
+                    class="input"
+                    placeholder="Tìm kiếm..."
+                    data-table-filter
+                    style="width: 250px; padding-left: 36px; height: 36px;"
+                />
+                <span class="material-symbols-outlined" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--on-surface-variant); font-size: 18px;">
+                    search
+                </span>
+            </div>
+            <!-- Filter -->
+            <button class="btn-secondary" style="height: 36px;">
+                <span class="material-symbols-outlined" style="font-size: 18px;">filter_list</span>
+                <span>Lọc</span>
+            </button>
+            <!-- Export -->
+            <button class="btn-ghost" style="height: 36px;">
+                <span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+                <span>Xuất Excel</span>
+            </button>
+            <!-- Add New -->
+            <button class="btn-primary" style="height: 36px;">
+                <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                <span>Thêm mới</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div style="overflow-x: auto;">
+        <table class="table" data-table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">
+                        <input type="checkbox" style="cursor: pointer;" />
+                    </th>
+                    <th data-sortable="id">Mã</th>
+                    <th data-sortable="name">Tên</th>
+                    <th data-sortable="status">Trạng thái</th>
+                    <th data-sortable="date">Ngày tạo</th>
+                    <th style="width: 100px; text-align: center;">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample Row -->
+                <tr>
+                    <td>
+                        <input type="checkbox" style="cursor: pointer;" />
+                    </td>
+                    <td style="font-weight: 600;">NV-001</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>
+                        <span class="badge badge-success">Hoạt động</span>
+                    </td>
+                    <td style="color: var(--on-surface-variant);">01/01/2024</td>
+                    <td style="text-align: center;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 4px;">
+                            <button class="btn-ghost" style="padding: 4px; min-width: auto;" title="Xem">
+                                <span class="material-symbols-outlined" style="font-size: 18px;">visibility</span>
+                            </button>
+                            <button class="btn-ghost" style="padding: 4px; min-width: auto;" title="Sửa">
+                                <span class="material-symbols-outlined" style="font-size: 18px;">edit</span>
+                            </button>
+                            <button class="btn-ghost" style="padding: 4px; min-width: auto; color: var(--error);" title="Xóa">
+                                <span class="material-symbols-outlined" style="font-size: 18px;">delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div style="padding: 12px 16px; border-top: 1px solid var(--outline-variant); background-color: var(--surface-container-low); display: flex; align-items: center; justify-content: space-between;">
+        <span class="body-sm" style="color: var(--on-surface-variant);">
+            Hiển thị 1-10 trên tổng số 100 mục
+        </span>
+        <div style="display: flex; gap: 4px;">
+            <button class="btn-secondary" style="padding: 6px 12px; min-width: auto;" disabled>
+                <span class="material-symbols-outlined" style="font-size: 16px;">chevron_left</span>
+            </button>
+            <button class="btn-primary" style="padding: 6px 12px; min-width: auto;">1</button>
+            <button class="btn-secondary" style="padding: 6px 12px; min-width: auto;">2</button>
+            <button class="btn-secondary" style="padding: 6px 12px; min-width: auto;">3</button>
+            <span style="padding: 6px 12px; color: var(--on-surface-variant);">...</span>
+            <button class="btn-secondary" style="padding: 6px 12px; min-width: auto;">
+                <span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+            </button>
+        </div>
+    </div>
+</div>
